@@ -11,4 +11,6 @@ see **[CorporateSDK CHANGELOG](https://github.com/Ceskasporitelna/cs-corporate-s
 
 ## [Unreleased]
 
+## [1.0.0] - 2017-04-24
+
 - Public release
