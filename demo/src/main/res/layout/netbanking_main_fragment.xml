@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_detail"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rl_btn_tests"
+        android:layout_width="match_parent"
+        android:layout_height="60dip"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:layout_width="350dip"
+            android:layout_height="53dip"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="7dip"
+            android:background="@drawable/button_round_blue" />
+
+        <Button
+            android:id="@+id/btn_tests"
+            android:layout_width="350dip"
+            android:layout_height="50dip"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dip"
+            android:background="@drawable/button_round_white"
+            android:text="@string/netbanking_tests_title"
+            android:textColor="@color/csasColorPrimary"
+            android:textSize="17sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_btn_payments"
+        android:layout_width="match_parent"
+        android:layout_height="60dip"
+        android:layout_above="@id/rl_btn_tests">
+
+        <Button
+            android:layout_width="350dip"
+            android:layout_height="53dip"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="7dip"
+            android:background="@drawable/button_round_blue" />
+
+        <Button
+            android:id="@+id/btn_payments"
+            android:layout_width="350dip"
+            android:layout_height="50dip"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dip"
+            android:background="@drawable/button_round_white"
+            android:text="@string/netbanking_payments_title"
+            android:textColor="@color/csasColorPrimary"
+            android:textSize="17sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_btn_accounts"
+        android:layout_width="match_parent"
+        android:layout_height="60dip"
+        android:layout_above="@id/rl_btn_payments">
+
+        <Button
+            android:layout_width="350dip"
+            android:layout_height="53dip"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="7dip"
+            android:background="@drawable/button_round_blue" />
+
+        <Button
+            android:id="@+id/btn_accounts"
+            android:layout_width="350dip"
+            android:layout_height="50dip"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dip"
+            android:background="@drawable/button_round_white"
+            android:text="@string/netbanking_accounts_title"
+            android:textColor="@color/csasColorPrimary"
+            android:textSize="17sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/rl_btn_accounts">
+
+        <TextView
+            android:id="@+id/tv_netbanking_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center_horizontal"
+            android:text="@string/netbanking_demo_text"
+            android:textColor="@color/csasColorPrimary"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+</RelativeLayout>

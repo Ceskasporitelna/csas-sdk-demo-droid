@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/ll_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <cz.csas.demo.components.DetailHeader
+            android:id="@+id/pdh_payment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:setHeaderTitle="@string/netbanking_payment" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/netbanking_amount"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/netbanking_state"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/netbanking_category"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/netbanking_type"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_execution_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/netbanking_execution_date"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailHeader
+            android:id="@+id/pdh_receiver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:setHeaderTitle="@string/netbanking_receiver_title" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_receiver_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/netbanking_name"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_receiver_iban"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/netbanking_iban"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_receiver_cziban"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/netbanking_cziban"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_receiver_acc_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/netbanking_acc_number"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_receiver_bank_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/netbanking_bank_code"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailHeader
+            android:id="@+id/pdh_sender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:setHeaderTitle="@string/netbanking_sender_title" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_sender_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/netbanking_name"
+            app:setValue="-" />
+
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_sender_iban"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/netbanking_iban"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_sender_cziban"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/netbanking_cziban"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_sender_acc_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/netbanking_acc_number"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_sender_bank_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/netbanking_bank_code"
+            app:setValue="-" />
+
+
+    </LinearLayout>
+</ScrollView>

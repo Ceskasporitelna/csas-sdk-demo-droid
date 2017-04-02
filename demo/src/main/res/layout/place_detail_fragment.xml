@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/ll_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <cz.csas.demo.components.DetailHeader
+            android:id="@+id/pdh_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_identifier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/detail_id"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/detail_location"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/detail_type"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/detail_state"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_state_note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/detail_state_note"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/detail_address"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/detail_city"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_post_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/detail_postcode"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_region"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/detail_region"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_country"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/detail_country"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/detail_distance"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailHeader
+            android:id="@+id/pdh_opening_hours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:setHeaderTitle="@string/detail_opening_hours" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_monday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/detail_monday"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_tuesday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/detail_tuesday"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_wednesday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/detail_wednesday"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_thursday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/detail_thursday"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_friday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/detail_friday"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_saturday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/detail_saturday"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_sunday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/detail_sunday"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailHeader
+            android:id="@+id/pdh_services"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:setHeaderTitle="@string/detail_services" />
+
+
+    </LinearLayout>
+</ScrollView>

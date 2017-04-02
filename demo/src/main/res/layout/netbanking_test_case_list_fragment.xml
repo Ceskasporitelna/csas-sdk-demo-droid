@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:layout_width="350dip"
+        android:layout_height="53dip"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/btn_trans_acc"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="7dip"
+        android:background="@drawable/button_round_blue" />
+
+    <Button
+        android:id="@+id/btn_netbanking_run_all"
+        android:layout_width="350dip"
+        android:layout_height="50dip"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/btn_trans_acc"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dip"
+        android:background="@drawable/button_round_white"
+        android:text="@string/netbanking_run_all"
+        android:textColor="@color/csasColorPrimary"
+        android:textSize="17sp" />
+
+    <ListView
+        android:id="@+id/lv_netbanking_test"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/btn_netbanking_run_all"
+        android:divider="@color/csasColorPrimaryTransparent"
+        android:dividerHeight="1px" />
+</RelativeLayout>

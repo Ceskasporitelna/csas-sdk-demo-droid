@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="FieldTypeTextView">
+        <attr name="setTitleTextView" format="string" />
+        <attr name="setHintTextView" format="string" />
+        <attr name="setErrorTextView" format="string" />
+        <attr name="setTextEditText" format="string" />
+        <attr name="setEnabled" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="FieldTypeCombobox">
+        <attr name="setTitleCombobox" format="string" />
+        <attr name="setErrorCombobox" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="FieldTypeCheckbox">
+        <attr name="setTitleCheckBox" format="string" />
+        <attr name="setOptionsArrayCheckBox" format="reference" />
+        <attr name="setErrorCheckBox" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="FieldTypeRadio">
+        <attr name="setTitleRadio" format="string" />
+        <attr name="setOptionsArrayRadio" format="reference" />
+        <attr name="setErrorRadio" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="FieldTypePobocky">
+        <attr name="setTitlePobocky" format="string" />
+        <attr name="setErrorPobocky" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="FieldTypeAttachment">
+        <attr name="setTitleAttachment" format="string" />
+        <attr name="setErrorAttachment" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="CsasMarker">
+        <attr name="setMarkerImage" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="DetailItem">
+        <attr name="setValueTextColor" format="string" />
+        <attr name="setTitle" format="string" />
+        <attr name="setValue" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="DetailHeader">
+        <attr name="setHeaderTitle" format="string" />
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,17 @@
+include ':demo', ':zProgressHUD'
+include ':core'
+project(':core').projectDir = new File(settingsDir, 'lib/cs-locker-ui-sdk-droid/lib/cs-core-sdk-droid/core')
+include ':lockerui'
+project(':lockerui').projectDir = new File(settingsDir, 'lib/cs-locker-ui-sdk-droid/lockerui')
+include ':uniforms'
+project(':uniforms').projectDir = new File(settingsDir, 'lib/cs-uniforms-sdk-droid/uniforms')
+include ':places'
+project(':places').projectDir = new File(settingsDir, 'lib/cs-places-sdk-droid/places')
+include ':appmenu'
+project(':appmenu').projectDir = new File(settingsDir, 'lib/cs-appmenu-sdk-droid/appmenu')
+include ':transparent_acc'
+project(':transparent_acc').projectDir = new File(settingsDir, 'lib/cs-transparent-acc-sdk-droid/transparent_acc')
+include ':netbanking'
+project(':netbanking').projectDir = new File(settingsDir, 'lib/cs-netbanking-sdk-droid/netbanking')
+include ':corporate'
+project(':corporate').projectDir = new File(settingsDir, 'lib/cs-corporate-sdk-droid/corporate')

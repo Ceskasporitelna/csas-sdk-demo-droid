@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginTop="?attr/actionBarSize"
+    tools:context="cz.csas.demo.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <TextView
+            android:id="@+id/tv_welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:text="@string/welcome_text"
+            android:textColor="@color/csasColorWhite"
+            android:textSize="20dip" />
+
+        <Switch
+            android:id="@+id/sv_offline_auth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_welcome"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:layout_marginTop="60dip"
+            android:singleLine="true"
+            android:switchPadding="50dip"
+            android:text="@string/offline_auth_switch_text"
+            android:textColor="@color/csasColorWhite"
+            android:textSize="18dip" />
+
+        <TextView
+            android:id="@+id/tv_locker_status_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sv_offline_auth"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dip"
+            android:gravity="center_horizontal"
+            android:text="@string/locker_status"
+            android:textColor="@color/csasColorWhite"
+            android:textSize="18dip" />
+
+
+        <TextView
+            android:id="@+id/tv_locker_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_locker_status_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dip"
+            android:gravity="center_horizontal"
+            android:textColor="@color/csasColorWhite"
+            android:textSize="22dip" />
+
+        <TextView
+            android:id="@+id/tv_offline_auth_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_locker_status"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dip"
+            android:layout_marginTop="10dip"
+            android:gravity="center_horizontal"
+            android:textColor="@color/csasColorWhite"
+            android:textSize="20dip" />
+
+        <Button
+            android:id="@+id/btn_lock_background"
+            android:layout_width="350dip"
+            android:layout_height="53dip"
+            android:layout_below="@id/tv_offline_auth_status"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="7dip"
+            android:background="@drawable/button_round_blue" />
+
+        <Button
+            android:id="@+id/btn_lock"
+            android:layout_width="350dip"
+            android:layout_height="50dip"
+            android:layout_below="@id/tv_offline_auth_status"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dip"
+            android:background="@drawable/button_round_white"
+            android:text="@string/lock_me"
+            android:textColor="@color/csasColorPrimary"
+            android:textSize="17sp" />
+
+        <Button
+            android:layout_width="350dip"
+            android:layout_height="53dip"
+            android:layout_below="@id/btn_lock"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="7dip"
+            android:background="@drawable/button_round_blue" />
+
+        <Button
+            android:id="@+id/btn_locker_ui"
+            android:layout_width="350dip"
+            android:layout_height="50dip"
+            android:layout_below="@id/btn_lock"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dip"
+            android:background="@drawable/button_round_white"
+            android:text="@string/locker_ui_demo"
+            android:textColor="@color/csasColorPrimary"
+            android:textSize="17sp" />
+
+        <Button
+            android:layout_width="350dip"
+            android:layout_height="53dip"
+            android:layout_below="@id/btn_locker_ui"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="7dip"
+            android:background="@drawable/button_round_blue" />
+
+        <Button
+            android:id="@+id/btn_uniforms"
+            android:layout_width="350dip"
+            android:layout_height="50dip"
+            android:layout_below="@id/btn_locker_ui"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dip"
+            android:background="@drawable/button_round_white"
+            android:text="@string/uniforms_demo"
+            android:textColor="@color/csasColorPrimary"
+            android:textSize="17sp" />
+
+        <Button
+            android:layout_width="350dip"
+            android:layout_height="53dip"
+            android:layout_below="@id/btn_uniforms"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="7dip"
+            android:background="@drawable/button_round_blue" />
+
+        <Button
+            android:id="@+id/btn_places"
+            android:layout_width="350dip"
+            android:layout_height="50dip"
+            android:layout_below="@id/btn_uniforms"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dip"
+            android:background="@drawable/button_round_white"
+            android:text="@string/places_demo"
+            android:textColor="@color/csasColorPrimary"
+            android:textSize="17sp" />
+
+
+        <Button
+            android:layout_width="350dip"
+            android:layout_height="53dip"
+            android:layout_below="@id/btn_places"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="7dip"
+            android:background="@drawable/button_round_blue" />
+
+        <Button
+            android:id="@+id/btn_app_menu"
+            android:layout_width="350dip"
+            android:layout_height="50dip"
+            android:layout_below="@id/btn_places"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dip"
+            android:background="@drawable/button_round_white"
+            android:text="@string/app_menu_demo"
+            android:textColor="@color/csasColorPrimary"
+            android:textSize="17sp" />
+
+        <Button
+            android:layout_width="350dip"
+            android:layout_height="53dip"
+            android:layout_below="@id/btn_app_menu"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="7dip"
+            android:background="@drawable/button_round_blue" />
+
+        <Button
+            android:id="@+id/btn_trans_acc"
+            android:layout_width="350dip"
+            android:layout_height="50dip"
+            android:layout_below="@id/btn_app_menu"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dip"
+            android:background="@drawable/button_round_white"
+            android:text="@string/trans_acc_demo"
+            android:textColor="@color/csasColorPrimary"
+            android:textSize="17sp" />
+
+        <Button
+            android:layout_width="350dip"
+            android:layout_height="53dip"
+            android:layout_below="@id/btn_trans_acc"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="7dip"
+            android:background="@drawable/button_round_blue" />
+
+        <Button
+            android:id="@+id/btn_netbanking"
+            android:layout_width="350dip"
+            android:layout_height="50dip"
+            android:layout_below="@id/btn_trans_acc"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dip"
+            android:background="@drawable/button_round_white"
+            android:text="@string/netbanking_demo"
+            android:textColor="@color/csasColorPrimary"
+            android:textSize="17sp" />
+
+        <Button
+            android:layout_width="350dip"
+            android:layout_height="53dip"
+            android:layout_below="@id/btn_netbanking"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="7dip"
+            android:background="@drawable/button_round_blue" />
+
+        <Button
+            android:id="@+id/btn_corporate"
+            android:layout_width="350dip"
+            android:layout_height="50dip"
+            android:layout_below="@id/btn_netbanking"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dip"
+            android:background="@drawable/button_round_white"
+            android:text="@string/corporate_demo"
+            android:textColor="@color/csasColorPrimary"
+            android:textSize="17sp" />
+
+    </RelativeLayout>
+</ScrollView>

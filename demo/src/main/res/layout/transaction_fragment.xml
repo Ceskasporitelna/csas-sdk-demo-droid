@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/ll_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <cz.csas.demo.components.DetailHeader
+            android:id="@+id/pdh_transaction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:setHeaderTitle="@string/trans_acc_transaction" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/trans_acc_amount"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/trans_acc_type"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_due_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/trans_acc_due_date"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_processing_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/trans_acc_process_date"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailHeader
+            android:id="@+id/pdh_receiver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:setHeaderTitle="@string/trans_acc_receiver" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_receiver_iban"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/trans_acc_iban"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_receiver_acc_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/trans_acc_acc_number"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_receiver_bank_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/trans_acc_bank_code"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailHeader
+            android:id="@+id/pdh_sender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:setHeaderTitle="@string/trans_acc_sender" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_sender_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/trans_acc_name"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_sender_acc_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/trans_acc_acc_number"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_sender_bank_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/trans_acc_bank_code"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_sender_iban"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/trans_acc_iban"
+            app:setValue="-" />
+
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_sender_vs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/trans_acc_vs"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_sender_cs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/trans_acc_cs"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_sender_ss"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/trans_acc_ss"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_sender_ssp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/trans_acc_ssp"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_sender_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/trans_acc_desc"
+            app:setValue="-" />
+
+    </LinearLayout>
+</ScrollView>

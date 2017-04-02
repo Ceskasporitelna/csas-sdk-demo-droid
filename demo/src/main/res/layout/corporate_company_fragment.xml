@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/ll_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/di_reg_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/corporate_reg_num"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/di_tax_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/corporate_tax_num"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/di_legal_form"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/corporate_legal_form"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/di_legal_form_i18n"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/corporate_name"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/di_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/corporate_legal_form_i18n"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/di_cnb_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/corporate_cnb_type"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/di_cnb_type_i18n"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/corporate_cnb_type_i18n"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/di_industry_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/corporate_industry_category"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/di_industry_category_i18n"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/corporate_industry_category_i18n"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/di_sector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/corporate_sector"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/di_sector_i18n"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/corporate_sector_i18n"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/di_relationship_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/corporate_relationship_type"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/di_relationship_type_i18n"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:setTitle="@string/corporate_relationship_type_i18n"
+            app:setValue="-" />
+
+        <RelativeLayout
+            android:id="@+id/rl_btn_campaigns"
+            android:layout_width="match_parent"
+            android:layout_height="80dip">
+
+            <Button
+                android:layout_width="200dip"
+                android:layout_height="53dip"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="12dip"
+                android:background="@drawable/button_round_blue" />
+
+            <Button
+                android:id="@+id/btn_campaigns"
+                android:layout_width="200dip"
+                android:layout_height="50dip"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="15dip"
+                android:background="@drawable/button_round_white"
+                android:text="@string/corporate_campaigns_title"
+                android:textColor="@color/csasColorPrimary"
+                android:textSize="17sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_btn_relationship_managers"
+            android:layout_width="match_parent"
+            android:layout_height="80dip">
+
+            <Button
+                android:layout_width="200dip"
+                android:layout_height="53dip"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="12dip"
+                android:background="@drawable/button_round_blue" />
+
+            <Button
+                android:id="@+id/btn_relationship_managers"
+                android:layout_width="200dip"
+                android:layout_height="50dip"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="15dip"
+                android:background="@drawable/button_round_white"
+                android:text="@string/corporate_relationship_managers_title"
+                android:textColor="@color/csasColorPrimary"
+                android:textSize="17sp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</ScrollView>

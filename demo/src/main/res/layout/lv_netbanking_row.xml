@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dip">
+
+    <Button
+        android:id="@+id/btn_netbanking_test_status"
+        android:layout_width="70dip"
+        android:layout_height="30dip"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="20dip"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginStart="20dip"
+        android:background="@drawable/button_appmenu_state"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:textColor="@color/csasColorPrimary" />
+
+
+    <TextView
+        android:id="@+id/tv_netbanking_test_name"
+        android:layout_width="wrap_content"
+        android:layout_height="30dip"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dip"
+        android:layout_marginStart="20dip"
+        android:layout_toLeftOf="@id/btn_netbanking_test_status"
+        android:layout_toStartOf="@id/btn_netbanking_test_status"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:textColor="@color/csasColorPrimary"
+        android:textSize="16sp" />
+
+</RelativeLayout>

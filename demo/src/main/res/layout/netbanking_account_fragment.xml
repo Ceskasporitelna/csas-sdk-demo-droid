@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/ll_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_acc_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/netbanking_acc_number"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_acc_bank_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/netbanking_bank_code"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_iban"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/netbanking_iban"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_bic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/netbanking_bic"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_cziban"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/netbanking_cziban"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_czbic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/netbanking_czbic"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_country_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/netbanking_country_code"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            app:setTitle="@string/netbanking_balance"
+            app:setValue="-" />
+
+        <cz.csas.demo.components.DetailItem
+            android:id="@+id/pdi_currency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:setTitle="@string/netbanking_currency"
+            app:setValue="-" />
+
+        <RelativeLayout
+            android:id="@+id/rl_btn_domestic_payment"
+            android:layout_width="match_parent"
+            android:layout_height="80dip"
+            android:visibility="gone">
+
+            <Button
+                android:layout_width="200dip"
+                android:layout_height="53dip"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="12dip"
+                android:background="@drawable/button_round_blue" />
+
+            <Button
+                android:id="@+id/btn_domestic_payment"
+                android:layout_width="200dip"
+                android:layout_height="50dip"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="15dip"
+                android:background="@drawable/button_round_white"
+                android:text="@string/netbanking_domestic_payment_title"
+                android:textColor="@color/csasColorPrimary"
+                android:textSize="17sp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</ScrollView>

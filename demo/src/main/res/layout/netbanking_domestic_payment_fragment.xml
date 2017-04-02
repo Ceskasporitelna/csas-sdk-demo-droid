@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/csasColorPrimary">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="@string/netbanking_domestic_payment_title"
+        android:textColor="@color/csasColorWhite"
+        android:textSize="18sp" />
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom_btn_background"
+        android:layout_width="match_parent"
+        android:layout_height="80dip"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:layout_width="200dip"
+            android:layout_height="53dip"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="12dip"
+            android:background="@drawable/button_round_blue" />
+
+        <Button
+            android:id="@+id/btn_start_signing"
+            android:layout_width="200dip"
+            android:layout_height="50dip"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="15dip"
+            android:background="@drawable/button_round_white"
+            android:text="@string/netbanking_domestic_payment_start_signing"
+            android:textColor="@color/csasColorPrimary"
+            android:textSize="17sp" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/sv_fields"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/rl_bottom_btn_background"
+        android:layout_below="@id/tv_title"
+        android:background="@color/colorLightBlue">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <cz.csas.demo.components.DetailHeader
+                android:id="@+id/pdh_sender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:setHeaderTitle="@string/netbanking_sender_title" />
+
+            <cz.csas.demo.components.FieldTypeTextView
+                android:id="@+id/ftw_sender_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:setTitleTextView="@string/netbanking_name" />
+
+            <cz.csas.demo.components.FieldTypeTextView
+                android:id="@+id/ftw_sender_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:setTitleTextView="@string/netbanking_acc_number" />
+
+            <cz.csas.demo.components.FieldTypeTextView
+                android:id="@+id/ftw_sender_bank_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:setTitleTextView="@string/netbanking_bank_code" />
+
+            <cz.csas.demo.components.DetailHeader
+                android:id="@+id/pdh_receiver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:setHeaderTitle="@string/netbanking_receiver_title" />
+
+            <cz.csas.demo.components.FieldTypeTextView
+                android:id="@+id/ftw_receiver_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:setTitleTextView="@string/netbanking_name" />
+
+            <cz.csas.demo.components.FieldTypeTextView
+                android:id="@+id/ftw_receiver_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:setTitleTextView="@string/netbanking_acc_number" />
+
+            <cz.csas.demo.components.FieldTypeTextView
+                android:id="@+id/ftw_receiver_bank_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:setTitleTextView="@string/netbanking_bank_code" />
+
+            <cz.csas.demo.components.FieldTypeTextView
+                android:id="@+id/ftw_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:setTitleTextView="@string/netbanking_amount" />
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/sv_select_authorization_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/rl_bottom_btn_background"
+        android:layout_below="@id/tv_title"
+        android:background="@color/colorLightBlue"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <cz.csas.demo.components.DetailHeader
+                android:id="@+id/dh_select_authorization_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dip" />
+
+            <RelativeLayout
+                android:id="@+id/rl_btn_mobile_case"
+                android:layout_width="match_parent"
+                android:layout_height="60dip"
+                android:visibility="gone">
+
+                <Button
+                    android:layout_width="200dip"
+                    android:layout_height="53dip"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="7dip"
+                    android:background="@drawable/button_round_blue" />
+
+                <Button
+                    android:id="@+id/btn_mobile_case"
+                    android:layout_width="200dip"
+                    android:layout_height="50dip"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10dip"
+                    android:background="@drawable/button_round_white"
+                    android:text="@string/netbanking_authorization_type_mobile_case"
+                    android:textColor="@color/csasColorPrimary"
+                    android:textSize="17sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_btn_tac"
+                android:layout_width="match_parent"
+                android:layout_height="60dip"
+                android:visibility="gone">
+
+                <Button
+                    android:layout_width="200dip"
+                    android:layout_height="53dip"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="7dip"
+                    android:background="@drawable/button_round_blue" />
+
+                <Button
+                    android:id="@+id/btn_tac"
+                    android:layout_width="200dip"
+                    android:layout_height="50dip"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10dip"
+                    android:background="@drawable/button_round_white"
+                    android:text="@string/netbanking_authorization_type_tac"
+                    android:textColor="@color/csasColorPrimary"
+                    android:textSize="17sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_btn_none"
+                android:layout_width="match_parent"
+                android:layout_height="60dip"
+                android:visibility="gone">
+
+                <Button
+                    android:layout_width="200dip"
+                    android:layout_height="53dip"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="7dip"
+                    android:background="@drawable/button_round_blue" />
+
+                <Button
+                    android:id="@+id/btn_none"
+                    android:layout_width="200dip"
+                    android:layout_height="50dip"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10dip"
+                    android:background="@drawable/button_round_white"
+                    android:text="@string/netbanking_authorization_type_none"
+                    android:textColor="@color/csasColorPrimary"
+                    android:textSize="17sp" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <ScrollView
+        android:id="@+id/sv_signing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/rl_bottom_btn_background"
+        android:layout_below="@id/tv_title"
+        android:background="@color/colorLightBlue"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <cz.csas.demo.components.DetailHeader
+                android:id="@+id/dh_step"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_signing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/csasColorWhite"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/et_pasword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:inputType="text" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

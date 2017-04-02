@@ -1,0 +1,134 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.+'
+    }
+}
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
+
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '25.0.2'
+
+    defaultConfig {
+        multiDexEnabled true
+        applicationId "cz.csas.demo"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode readVersionCode()
+        versionName readVersionName()
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    dexOptions {
+        javaMaxHeapSize "2g"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(':core')
+    compile project(':lockerui')
+    compile project(':uniforms')
+    compile project(':places')
+    compile project(':appmenu')
+    compile project(':transparent_acc')
+    compile project(':netbanking')
+    compile project(':corporate')
+    compile project(':zProgressHUD')
+    compile 'com.jakewharton:butterknife:7.0.0'
+    compile 'com.android.support:appcompat-v7:25.3.0'
+    compile 'com.android.support:design:25.3.0'
+    compile 'com.google.android.gms:play-services:8.4.0'
+    compile 'com.google.maps.android:android-maps-utils:0.4.2'
+    compile 'com.github.clans:fab:1.6.3'
+    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.android.support:support-v4:25.3.0'
+    compile('com.crashlytics.sdk.android:crashlytics:2.5.5@aar') {
+        transitive = true;
+    }
+    testCompile 'junit:junit:4.12'
+}
+
+
+// Thanks to https://medium.com/@kmlong1183/using-fastlane-tools-and-android-2e8d76bb138b#.ew4kj88sa
+def readVersionName() {
+    def version = readVersion()
+    return "${version["major"]}.${version["minor"]}.${version["patch"]}"
+}
+
+def readVersionCode() {
+    def version = readVersion()
+    def patch = version["patch"] as int
+    return patch
+}
+
+def readVersion() {
+    def versionFile = new File(project.rootDir, "version.properties")
+    def version = new Properties()
+    def stream
+    try {
+        stream = new FileInputStream(versionFile)
+        version.load(stream)
+    } catch (FileNotFoundException ignore) {
+    } finally {
+        if (stream != null) stream.close()
+    }
+
+    // safety defaults
+    if (!version["major"]) version["major"] = "1"
+    if (!version["minor"]) version["minor"] = "0"
+    if (!version["patch"]) version["patch"] = "0"
+    return version
+}
+
+def incrementBuildVersion(def type = "patch") {
+    def versionFile = new File(project.rootDir, "version.properties")
+    def version = readVersion()
+
+    def major = version["major"] as int
+    def minor = version["minor"] as int
+    def patch = version["patch"] as int
+
+    if (type == "major") {
+        major++
+        minor = 0
+        patch = 0
+    } else if (type == "minor") {
+        minor++
+        patch = 0
+    } else if (type == "patch") {
+        patch++
+    }
+
+    version["major"] = major.toString()
+    version["minor"] = minor.toString()
+    version["patch"] = patch.toString()
+
+    def stream = new FileOutputStream(versionFile)
+    try {
+        version.store(stream, null)
+    } finally {
+        stream.close()
+    }
+
+    println "Version is now: {" + major + "." + minor + "." + patch+"}"
+}

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".appmenu.AppMenuActivity"
+    tools:showIn="@layout/activity_appmenu">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:background="@color/csasColorPrimary">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dip"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dip"
+            android:layout_marginStart="20dip"
+            android:gravity="center_vertical"
+            android:text="@string/fake_version_appmenu"
+            android:textColor="@color/csasColorWhite" />
+
+        <Switch
+            android:id="@+id/sw_fake_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20dip"
+            android:layout_marginRight="20dip"
+            android:gravity="center_vertical" />
+
+    </RelativeLayout>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/activity_main_swipe_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ListView
+            android:id="@+id/lv_app_menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/csasColorWhite"
+            android:divider="@color/csasColorPrimaryTransparent"
+            android:dividerHeight="1px" />
+    </android.support.v4.widget.SwipeRefreshLayout>
+</LinearLayout>

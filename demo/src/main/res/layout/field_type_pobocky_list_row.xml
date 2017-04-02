@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="60dip">
+
+    <TextView
+        android:id="@+id/tv_pobocka_address"
+        android:layout_width="match_parent"
+        android:layout_height="35dip"
+        android:textSize="16sp"
+        android:textColor="@color/csasColorPrimaryDark"
+        android:text="test"
+        android:singleLine="true"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:gravity="center_vertical"/>
+
+    <TextView
+        android:id="@+id/tv_pobocka_city"
+        android:layout_width="match_parent"
+        android:layout_height="25dip"
+        android:textSize="15sp"
+        android:textColor="@color/csasColorPrimaryDark"
+        android:text="test"
+        android:singleLine="true"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:gravity="center_vertical"/>
+</LinearLayout>
