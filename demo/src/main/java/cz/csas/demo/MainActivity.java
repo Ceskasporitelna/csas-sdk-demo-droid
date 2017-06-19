@@ -30,9 +30,10 @@ import cz.csas.appmenu.AppItem;
 import cz.csas.appmenu.AppMenu;
 import cz.csas.cscore.CoreSDK;
 import cz.csas.cscore.Environment;
-import cz.csas.cscore.client.rest.CallbackBasic;
 import cz.csas.cscore.client.rest.CallbackUI;
+import cz.csas.cscore.client.rest.CsCallback;
 import cz.csas.cscore.client.rest.CsRestError;
+import cz.csas.cscore.client.rest.client.Response;
 import cz.csas.cscore.error.CsSDKError;
 import cz.csas.cscore.locker.CsNavBarColor;
 import cz.csas.cscore.locker.LockerConfig;
@@ -288,14 +289,14 @@ public class MainActivity extends AppCompatActivity implements CallbackUI<Locker
             @Override
             public void onClick(View v) {
                 if (mLockerState == State.USER_UNLOCKED) {
-                    CoreSDK.getInstance().getLocker().lock(new CallbackBasic<LockerStatus>() {
+                    CoreSDK.getInstance().getLocker().lock(new CsCallback<LockerStatus>() {
                         @Override
-                        public void success(LockerStatus lockerStatus) {
+                        public void success(LockerStatus lockerStatus, Response response) {
                             handleLockerStatusOperation(lockerStatus);
                         }
 
                         @Override
-                        public void failure() {
+                        public void failure(CsSDKError error) {
 
                         }
                     });
