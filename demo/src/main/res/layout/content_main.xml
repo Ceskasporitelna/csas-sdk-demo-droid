@@ -40,11 +40,25 @@
             android:textColor="@color/csasColorWhite"
             android:textSize="18dip" />
 
+        <Switch
+            android:id="@+id/sv_oauth_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sv_offline_auth"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:layout_marginTop="10dip"
+            android:singleLine="true"
+            android:switchPadding="50dip"
+            android:text="@string/auth_type_switch_text"
+            android:textColor="@color/csasColorWhite"
+            android:textSize="18dip" />
+
         <TextView
             android:id="@+id/tv_locker_status_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/sv_offline_auth"
+            android:layout_below="@id/sv_oauth_type"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dip"
             android:gravity="center_horizontal"

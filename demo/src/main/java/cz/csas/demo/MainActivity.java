@@ -71,14 +71,23 @@ public class MainActivity extends AppCompatActivity implements CallbackUI<Locker
 
     private final String LOG_TAG = "CsasSDKDemo";
 
-    private final String BASE_URL_OAUTH = "https://bezpecnost.csast.csas.cz/mep/fs/fl/oauth2";
+    // common credentials
     private final String BASE_URL = "https://www.csast.csas.cz/webapi";
-    private final String SCOPE = "/v3/netbanking"; // your scope
-    private final String CLIENT_ID = "android_sdk_demo_webapi_csas_cz"; // your client id
-    private final String CLIENT_SECRET = "7173IMPJ3F4QEU1YPTDAKMYLVFK92XBV"; // your client secret
     private final String REDIRECT_URL = "csastest://auth-completed";// your redirect url;
     private final String WEB_API_KEY = "fe334c4e-2787-4056-a258-35176f988b68";// your csas web api key;
     private final String PUBLIC_KEY = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjhgcI8zi/UyWfVu4DHudTwDF5ur3n1gxzi1kUXbScH0gv5LhqSgZrOY61foZeoFA+Bd6G3XWYrs3uchpygQluUIyPjMByzFbDhQMPe563PEs5tUMgNxnD6D/FTCbXjqRqd5L5S9S6ar37cVTXQaS+rhengWZiXSm3ZtGZ9iccyGbya8KxwcMdegV1P3xyw3px7kXB9sNaDoCGoEG/IqNI7P5eLiS7Jo3j3Nq/pUrQFvbAxD3N0otXYIH94BLAri18EG91qfsvyFpRgBMrIAj2J/MWS/dy/PpmRpSP7InuGmx68G4CEDYeg4CLZMUO1B4sKie5W7lFPlZWEnXYSnQYQIDAQAB";
+
+    // netbanking credentials
+    private final String BASE_URL_OAUTH = "https://bezpecnost.csast.csas.cz/mep/fs/fl/oauth2";
+    private final String SCOPE = "/v3/netbanking"; // your scope
+    private final String CLIENT_ID = "android_sdk_demo_webapi_csas_cz"; // your client id
+    private final String CLIENT_SECRET = "7173IMPJ3F4QEU1YPTDAKMYLVFK92XBV"; // your client secret
+
+    // corporate credentials
+    private final String BASE_URL_OAUTH_CORPORATE = "https://www.csast.csas.cz/widp/oauth2";
+    private final String SCOPE_CORPORATE = "/v1/corporate"; // your scope
+    private final String CLIENT_ID_CORPORATE = "android_sdk_corporate_demo_webapi_csas_cz"; // your client id
+    private final String CLIENT_SECRET_CORPORATE = "95kky75k98rgsmb3h7z4b1oacn"; // your client secret
 
     private State mLockerState;
     private AuthFlowOptions mAuthFlowOptions;
@@ -126,6 +135,9 @@ public class MainActivity extends AppCompatActivity implements CallbackUI<Locker
     @Bind(R.id.sv_offline_auth)
     Switch svOfflineAuth;
 
+    @Bind(R.id.sv_oauth_type)
+    Switch svOAuthType;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -142,7 +154,6 @@ public class MainActivity extends AppCompatActivity implements CallbackUI<Locker
                 runLockerUI();
             }
         });
-
         disableSSLCertificateChecking();
 
         /*
@@ -161,34 +172,7 @@ public class MainActivity extends AppCompatActivity implements CallbackUI<Locker
 
         mDisplayInfoOptions = new DisplayInfoOptions(getString(R.string.unregister_prompt_text));
 
-
-        /**
-         **************************************************************************************************************
-         * I HAVE ADDED THIS CONDITION FOR LOCKER INITIALIZATION, SO I CAN SEE IF LOCKER WAS ALREADY INITIALIZED
-         *
-         * REINITIALIZATION IS TAKEN AS A APP RESTART AND STATE LOCKER (UNREGISTERED EVENTUALLY) IS SET
-         * ************************************************************************************************************
-         */
-        if (!isLockerAvailable()) {
-            LockerConfig lockerConfig = new LockerConfig.Builder().setClientId(CLIENT_ID).setClientSecret(CLIENT_SECRET).setPublicKey(PUBLIC_KEY).setRedirectUrl(REDIRECT_URL).setScope(SCOPE).setOfflineAuthEnabled().create();
-
-            CoreSDK.getInstance().useContext(App.get()).useWebApiKey(WEB_API_KEY).useLogger(new LogManagerImpl("CS_LOG", LogLevel.DEBUG)).useEnvironment(new Environment(BASE_URL, BASE_URL_OAUTH, true)).useLocker(lockerConfig);
-
-            /*
-             * Here you set lockTypes you are gonna allow, with all its parameters.
-             */
-            List<LockType> lockTypes = new ArrayList<>();
-            lockTypes.add(new GestureLock(4, 5));
-            lockTypes.add(new PinLock(5));
-            lockTypes.add(new FingerprintLock());
-            lockTypes.add(new NoLock());
-            LockerUIOptions lockerUIOptions = new LockerUIOptions.Builder().setNavBarColor(CsNavBarColor.DEFAULT).setShowLogo(ShowLogo.ALWAYS).setAllowedLockTypes(lockTypes).setAppName(getString(R.string.application_name)).create();
-            /*
-             * To change your texts please customize texts in string resources
-             */
-
-            LockerUI.getInstance().initialize(this, lockerUIOptions);
-        }
+        initLocker();
         LockerStatus lockerStatus = LockerUI.getInstance().getLocker().getStatus();
         handleLockerStatusOperation(lockerStatus);
 
@@ -348,6 +332,7 @@ public class MainActivity extends AppCompatActivity implements CallbackUI<Locker
 
     private void runLockerUI() {
         if (mLockerState == State.USER_UNREGISTERED || mLockerState == State.USER_LOCKED) {
+            initLocker();
             // offline verification settings
             mAuthFlowOptions.setOfflineAuthEnabled(mOfflineAuthEnabled);
             LockerUI.getInstance().startAuthenticationFlow(mAuthFlowOptions, this);
@@ -390,6 +375,36 @@ public class MainActivity extends AppCompatActivity implements CallbackUI<Locker
         }
     }
 
+    private void initLocker() {
+        LockerConfig lockerConfig = null;
+        Environment environment = null;
+        if (!svOAuthType.isChecked()) {
+            // netbanking config
+            lockerConfig = new LockerConfig.Builder().setClientId(CLIENT_ID).setClientSecret(CLIENT_SECRET).setPublicKey(PUBLIC_KEY).setRedirectUrl(REDIRECT_URL).setScope(SCOPE).setOfflineAuthEnabled().create();
+            environment = new Environment(BASE_URL, BASE_URL_OAUTH, true);
+        } else {
+            // corporate config
+            lockerConfig = new LockerConfig.Builder().setClientId(CLIENT_ID_CORPORATE).setClientSecret(CLIENT_SECRET_CORPORATE).setPublicKey(PUBLIC_KEY).setRedirectUrl(REDIRECT_URL).setScope(SCOPE_CORPORATE).setOfflineAuthEnabled().create();
+            environment = new Environment(BASE_URL, BASE_URL_OAUTH_CORPORATE, true);
+        }
+        CoreSDK.getInstance().useContext(App.get()).useWebApiKey(WEB_API_KEY).useLogger(new LogManagerImpl("CS_LOG", LogLevel.DEBUG)).useEnvironment(environment).useLocker(lockerConfig);
+
+        /*
+         * Here you set lockTypes you are gonna allow, with all its parameters.
+         */
+        List<LockType> lockTypes = new ArrayList<>();
+        lockTypes.add(new GestureLock(4, 5));
+        lockTypes.add(new PinLock(5));
+        lockTypes.add(new FingerprintLock());
+        lockTypes.add(new NoLock());
+        LockerUIOptions lockerUIOptions = new LockerUIOptions.Builder().setNavBarColor(CsNavBarColor.DEFAULT).setShowLogo(ShowLogo.ALWAYS).setAllowedLockTypes(lockTypes).setAppName(getString(R.string.application_name)).create();
+        /*
+         * To change your texts please customize texts in string resources
+         */
+
+        LockerUI.getInstance().initialize(mActivity, lockerUIOptions);
+    }
+
     private static void disableSSLCertificateChecking() {
         TrustManager[] trustAllCerts = new TrustManager[]{new X509TrustManager() {
             public X509Certificate[] getAcceptedIssuers() {
@@ -417,14 +432,6 @@ public class MainActivity extends AppCompatActivity implements CallbackUI<Locker
             e.printStackTrace();
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
-        }
-    }
-
-    private boolean isLockerAvailable() {
-        try {
-            return CoreSDK.getInstance().getLocker() != null;
-        } catch (RuntimeException e) {
-            return false;
         }
     }
 

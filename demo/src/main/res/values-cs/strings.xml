@@ -13,6 +13,7 @@
 
     <string name="welcome_text">Hello everybody,\n\n I would love to introduce our new CSAS SDK Demo App.</string>
     <string name="offline_auth_switch_text">Offline autentizace: </string>
+    <string name="auth_type_switch_text">Netb/Corp autentizace: </string>
     <string name="locker_status">Your Locker Status is:</string>
     <string name="locker_ui_demo">LockerUI Demo</string>
     <string name="lock_me">Lock</string>

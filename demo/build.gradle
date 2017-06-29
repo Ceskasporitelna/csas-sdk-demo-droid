@@ -60,14 +60,14 @@ dependencies {
     testCompile 'junit:junit:4.12'
 
     //sdks
-    compile 'cz.csas:cs-core-sdk:1.2.0'
-    compile 'cz.csas:cs-locker-ui-sdk:1.1.3'
-    compile 'cz.csas:cs-appmenu-sdk:1.1.0'
-    compile 'cz.csas:cs-corporate-sdk:1.1.0'
-    compile 'cz.csas:cs-netbanking-sdk:1.1.0'
-    compile 'cz.csas:cs-places-sdk:1.1.0'
-    compile 'cz.csas:cs-transparent-acc-sdk:1.1.0'
-    compile 'cz.csas:cs-uniforms-sdk:1.1.0'
+    compile 'cz.csas:cs-core-sdk:1.2.1@aar'
+    compile 'cz.csas:cs-locker-ui-sdk:1.1.4@aar'
+    compile 'cz.csas:cs-appmenu-sdk:1.1.0@aar'
+    compile 'cz.csas:cs-corporate-sdk:1.1.0@aar'
+    compile 'cz.csas:cs-netbanking-sdk:1.1.0@aar'
+    compile 'cz.csas:cs-places-sdk:1.1.0@aar'
+    compile 'cz.csas:cs-transparent-acc-sdk:1.1.0@aar'
+    compile 'cz.csas:cs-uniforms-sdk:1.1.0@aar'
 
 }
 
