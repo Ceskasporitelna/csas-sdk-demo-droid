@@ -30,11 +30,7 @@ This repository contains demo application demonstrating the usage of Android SDK
 
 1) Clone this repo using command `git clone https://github.com/Ceskasporitelna/csas-sdk-demo-droid.git`
 
-2) Enter into cloned directory using command `cd csas-sdk-demo-droid`
-
-3) Run command `git submodule update --init --recursive` to initialize and update required git submodules.
-
-4) Open Android Studio and import this project. Add all detected unregistered VCS roots as Android Studio recommends.
+2) Open Android Studio and import this project. Add all detected unregistered VCS roots as Android Studio recommends.
 
 # Usage
 
@@ -43,9 +39,6 @@ This repository contains demo application demonstrating the usage of Android SDK
 To see how the demo application works, just open the project in
 
 Implementation of the application is in the file `csas-sdk-demo-droid/demo/src/main/java/cz/csas/demo/`. Pay special attention to `MainActivity.java` with all its comments to see how the frameworks are configured and used. The demo application focuses on UniformsSDK integration as well. See `UniformsActivity` with its two Fragments `FormListFragment`, `FormDescFragment`.
-
-## Developing against CSAS SDK
-All CSAS SDKs are included in this repositories as submodules, you can thus use this demo project to test your implementation of bugfixes and new features.
 
 
 # Contributing
