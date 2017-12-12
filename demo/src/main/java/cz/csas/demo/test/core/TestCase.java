@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.UUID;
 
+import cz.csas.cscore.CoreSDK;
 import cz.csas.cscore.Environment;
 import cz.csas.cscore.client.WebApiConfiguration;
 import cz.csas.cscore.client.WebApiConfigurationImpl;
@@ -69,7 +70,7 @@ public abstract class TestCase {
     public void setUp() {
         mWebApiConfiguration = new WebApiConfigurationImpl(WEB_API_KEY_TEST, new Environment(TEST_BASE_URL, TEST_BASE_URL_OAUTH, false), "cs-CZ", null);
         mXJudgeSessionHeader = UUID.randomUUID().toString();
-        mJudgeClient = new JudgeClient(JUDGE_BASE_URL);
+        mJudgeClient = new JudgeClient(JUDGE_BASE_URL, CoreSDK.getInstance().getLogger());
         mNetbankingJudgeClient = new NetbankingClient(mWebApiConfiguration);
         mNetbankingClient = Netbanking.getInstance().getNetbankingClient();
         mTestResult = new TestResult();

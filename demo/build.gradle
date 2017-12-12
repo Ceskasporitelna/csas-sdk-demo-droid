@@ -60,8 +60,8 @@ dependencies {
     testCompile 'junit:junit:4.12'
 
     //sdks
-    compile 'cz.csas:cs-core-sdk:1.2.1@aar'
-    compile 'cz.csas:cs-locker-ui-sdk:1.1.4@aar'
+    compile 'cz.csas:cs-core-sdk:1.5.1@aar'
+    compile 'cz.csas:cs-locker-ui-sdk:3.1.0@aar'
     compile 'cz.csas:cs-appmenu-sdk:1.1.0@aar'
     compile 'cz.csas:cs-corporate-sdk:1.1.0@aar'
     compile 'cz.csas:cs-netbanking-sdk:1.1.0@aar'

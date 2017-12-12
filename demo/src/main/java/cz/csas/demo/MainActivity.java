@@ -30,9 +30,7 @@ import cz.csas.appmenu.AppItem;
 import cz.csas.appmenu.AppMenu;
 import cz.csas.cscore.CoreSDK;
 import cz.csas.cscore.Environment;
-import cz.csas.cscore.client.rest.CallbackUI;
 import cz.csas.cscore.client.rest.CsCallback;
-import cz.csas.cscore.client.rest.CsRestError;
 import cz.csas.cscore.client.rest.client.Response;
 import cz.csas.cscore.error.CsSDKError;
 import cz.csas.cscore.locker.CsNavBarColor;
@@ -49,10 +47,12 @@ import cz.csas.demo.places.PlacesActivity;
 import cz.csas.demo.transparent_acc.TransparentAccActivity;
 import cz.csas.demo.uniforms.UniformsActivity;
 import cz.csas.lockerui.LockerUI;
+import cz.csas.lockerui.components.CallbackUI;
 import cz.csas.lockerui.components.MaterialDialog;
 import cz.csas.lockerui.config.AuthFlowOptions;
 import cz.csas.lockerui.config.DisplayInfoOptions;
 import cz.csas.lockerui.config.FingerprintLock;
+import cz.csas.lockerui.config.GestureGridSize;
 import cz.csas.lockerui.config.GestureLock;
 import cz.csas.lockerui.config.LockType;
 import cz.csas.lockerui.config.LockerUIOptions;
@@ -315,9 +315,10 @@ public class MainActivity extends AppCompatActivity implements CallbackUI<Locker
     }
 
     @Override
-    public void failure(CsRestError error) {
+    public void failure(CsSDKError error) {
 
     }
+
 
     private void handleLockerStatusOperation(LockerStatus lockerStatus) {
         mLockerState = lockerStatus.getState();
@@ -387,13 +388,14 @@ public class MainActivity extends AppCompatActivity implements CallbackUI<Locker
             lockerConfig = new LockerConfig.Builder().setClientId(CLIENT_ID_CORPORATE).setClientSecret(CLIENT_SECRET_CORPORATE).setPublicKey(PUBLIC_KEY).setRedirectUrl(REDIRECT_URL).setScope(SCOPE_CORPORATE).setOfflineAuthEnabled().create();
             environment = new Environment(BASE_URL, BASE_URL_OAUTH_CORPORATE, true);
         }
-        CoreSDK.getInstance().useContext(App.get()).useWebApiKey(WEB_API_KEY).useLogger(new LogManagerImpl("CS_LOG", LogLevel.DEBUG)).useEnvironment(environment).useLocker(lockerConfig);
+        CoreSDK.getInstance().useContext(this).useWebApiKey(WEB_API_KEY).useLogger(new LogManagerImpl("CS_LOG", LogLevel.DETAILED_DEBUG)).useEnvironment(environment).useLocker(lockerConfig);
 
         /*
          * Here you set lockTypes you are gonna allow, with all its parameters.
          */
+
         List<LockType> lockTypes = new ArrayList<>();
-        lockTypes.add(new GestureLock(4, 5));
+        lockTypes.add(new GestureLock(new GestureGridSize(4, 4), 5));
         lockTypes.add(new PinLock(5));
         lockTypes.add(new FingerprintLock());
         lockTypes.add(new NoLock());
